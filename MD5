@@ -1,0 +1,12 @@
+6ba7b63ec561955ab79c0bf2b287b2a7 *DESCRIPTION
+f180524a4142338233aefd054b6a1ac7 *NAMESPACE
+6748fa1f5d768fdd5cb13d8e6a661731 *R/Det.R
+8219b35812bea398791a17996d922011 *R/Imzap.R
+8b0f4bee86b7a16845e8e8fb35f54e8a *R/matclass.R
+8663f1b460cef050460df7d356c31093 *R/matexp.R
+04637ec6177f7c8c98ae2e7c0eb6af39 *R/matlog.R
+3860acbd107a688e8812cdc5b101a513 *man/Det.Rd
+fe437bd3ef2e0644ac7346a1402fa707 *man/Imzap.Rd
+d9f65f265802aab1e5f4fa87d7c1f52a *man/matclass.Rd
+21e7504f46347afffb3d42b8001cff19 *man/matexp.Rd
+0f0ec73d49eec4521513db86b362fa7a *man/matlog.Rd

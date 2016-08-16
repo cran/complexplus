@@ -1,0 +1,33 @@
+#' @title Matrix Class
+#' @description \code{matclass} gives the name of the class of the matrix.
+#' If the class of the matrix elements is numeric or integer, the matrix class is real by default.
+#' @param M a matrix, of any type and dimensions.
+#' @param real a logical value. Set to FALSE if you want to opt out of the default treatment of numeric or integer elements.
+#' @author Albert Dorador
+#' @export
+#' @examples
+#' A <- matrix(c(1, 2, 2+3i, 5), ncol = 2)  # complex matrix
+#' B <- matrix(1:4, ncol = 2)  # real matrix
+#' C <- matrix(c(TRUE, TRUE, FALSE, FALSE), ncol = 2)  # boolean matrix
+#' D <- matrix(c('a', 'b', 'c', 'd'), ncol = 2)  # character matrix
+#' E <- matrix(c(1,2+3i,'a',TRUE),ncol=2)  # 1 single character makes it a character matrix
+#'
+#' matclass(A)
+#' matclass(B)
+#' matclass(B,FALSE)
+#' matclass(C)
+#' matclass(D)
+#' matclass(E)
+#'
+matclass <- function(M, real = TRUE){
+  result <- class(as.vector(M))
+  if(result == "numeric" || result == "integer"){
+    if(real == TRUE){
+      return("real")
+    }else{
+      return(result)
+    }
+  }else{
+    return(result)
+  }
+}
