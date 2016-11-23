@@ -39,7 +39,7 @@ matlog <- function(A, ...)
     counter <- integer(1) #integer takes half the memory space of numeric (double type)
     e.val <- eigen(A, only.values = TRUE)$values
     for (i in 1:n){
-      if(class(Imzap(e.val[i])) != "complex"){ #i.e. if eigenvalue is real
+      if(class(Imzap(e.val[i])) != "complex"){ #i.e. if ith eigenvalue is real
         if(Imzap(e.val[i]) > 0){ #0 would make the matrix singular, and negative is likely to cause trouble
           counter <- counter + 1
         }
