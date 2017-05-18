@@ -33,4 +33,3 @@ matclass(E)
 \author{
 Albert Dorador
 }
-

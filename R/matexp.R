@@ -28,7 +28,7 @@ matexp <- function(A, ...)
   p <- d[2]
   if (n != p)
     stop("Supplied matrix is not square")
-  if (is.complex(A) == TRUE){
+  if (is.complex(A)){
     # Extract real and imaginary parts
     Ar <- Re(A)
     Ai <- Im(A)

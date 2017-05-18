@@ -34,4 +34,3 @@ Det(S)
 \author{
 Albert Dorador
 }
-

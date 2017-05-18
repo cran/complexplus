@@ -27,7 +27,7 @@ Det <- function(M){
   if (rankMatrix(M) != nrw){
     return(0)
   }
-  if(is.complex(M) == TRUE){
+  if(is.complex(M)){
     prod(eigen(M, only.values = TRUE)$values)
   }else{
     det(M)

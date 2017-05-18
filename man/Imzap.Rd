@@ -7,7 +7,7 @@
 Imzap(x, tol = 1e-06)
 }
 \arguments{
-\item{x}{a vector, real or complex.}
+\item{x}{a scalar or vector, real or complex.}
 
 \item{tol}{a tolerance, \eqn{10^{-6}}{10^-6} by default. Prevents possible numerical problems.
 Can be set to 0 if desired.}
@@ -31,4 +31,3 @@ Imzap(x4)  # inocuous with complex vectors with non-null complex part
 \author{
 Albert Dorador
 }
-

@@ -35,34 +35,34 @@ matlog <- function(A, ...)
   p <- d[2]
   if (n != p)
     stop("Supplied matrix is not square")
-  if (is.complex(A) == TRUE){
-    counter <- integer(1) #integer takes half the memory space of numeric (double type)
+  if (is.complex(A)){
     e.val <- eigen(A, only.values = TRUE)$values
-    for (i in 1:n){
+    safe <- TRUE
+    i <- 1
+    while (safe && i <= n){
       if(class(Imzap(e.val[i])) != "complex"){ #i.e. if ith eigenvalue is real
-        if(Imzap(e.val[i]) > 0){ #0 would make the matrix singular, and negative is likely to cause trouble
-          counter <- counter + 1
+        if(Imzap(e.val[i]) <= 0){ #0 would make the matrix singular, and negative is likely to cause trouble
+          safe <- FALSE
         }
-      }else{
-        counter <- counter + 1 #if complex eigenvalue, always OK individually
       }
+      i <- i + 1
     }
-    if (counter == n){ #i.e. only if taking the log is safe
+    if (safe){ #i.e. only if taking the log is safe
       # Extract real and imaginary parts
       Ar <- Re(A)
       Ai <- Im(A)
-
+      
       # Construct real but extended matrix
       L <- rbind( cbind(Ar,-Ai), cbind(Ai,Ar))
-
+      
       # Compute exponential of that
       lL <- logm(L, ...)
-
+      
       # Construct logm(A) by extracting real and imaginary parts from blocks
       lA <- lL[1:n,1:n] + 1i*lL[(1:n)+n,1:n]
-
+      
       lA <- matrix(Imzap(lA), ncol = n) # to guarantee best-looking solutions
-
+      
       return(lA)
     }else{
       stop("The matrix logarithm may not exist for this matrix.")

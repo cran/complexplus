@@ -1,7 +1,7 @@
 #' @title Rounding of Null Imaginary Part of a Complex Number
 #' @description imaginary parts with values very close to 0 are 'zapped', i.e. treated as 0.
 #' Therefore, the number becomes real and changes its class from complex to numeric.
-#' @param x a vector, real or complex.
+#' @param x a scalar or vector, real or complex.
 #' @param tol a tolerance, \eqn{10^{-6}}{10^-6} by default. Prevents possible numerical problems.
 #' Can be set to 0 if desired.
 #' @author Albert Dorador
@@ -18,5 +18,5 @@
 #' Imzap(x4)  # inocuous with complex vectors with non-null complex part
 #'
 Imzap <- function(x, tol = 1e-6) {
-  if (all(abs(Im(z <- zapsmall(x))) <= tol)) as.numeric(z) else x
+  if (all(abs(Im(z <- zapsmall(x))) <= tol)) as.double(x) else x
 }

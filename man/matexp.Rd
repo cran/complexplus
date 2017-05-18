@@ -34,10 +34,9 @@ matexp(B)
 matexp(B, "Taylor")  # uses Taylor's method in function expm
 
 }
-\author{
-Uffe Høgsbro Thygesen
-}
 \seealso{
 \code{\link[expm]{expm}}
 }
-
+\author{
+Uffe Høgsbro Thygesen
+}
